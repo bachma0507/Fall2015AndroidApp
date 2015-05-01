@@ -184,7 +184,7 @@
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
                 <!-- IMPORTANT: Change "com.parse.tutorials.pushnotifications" to match your app's package name. -->
-                <category android:name="org.bicsi.canada2015" />
+                <category android:name="org.bicsi.fall2015" />
             </intent-filter>
         </receiver>
     </application>

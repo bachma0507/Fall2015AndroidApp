@@ -752,7 +752,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_friend_picker_fragment_multi_select org.bicsi.canada2015:multi_select}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_friend_picker_fragment_multi_select org.bicsi.fall2015:multi_select}</code></td><td></td></tr>
            </table>
            @see #com_facebook_friend_picker_fragment_multi_select
          */
@@ -760,7 +760,7 @@ containing a value of this type.
             0x7f010000
         };
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#multi_select}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#multi_select}
           attribute's value can be found in the {@link #com_facebook_friend_picker_fragment} array.
 
 
@@ -770,7 +770,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:multi_select
+          @attr name org.bicsi.fall2015:multi_select
         */
         public static final int com_facebook_friend_picker_fragment_multi_select = 0;
         /** Attributes that can be used with a com_facebook_login_view.
@@ -779,10 +779,10 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_login_view_confirm_logout org.bicsi.canada2015:confirm_logout}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_login_view_fetch_user_info org.bicsi.canada2015:fetch_user_info}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_login_view_login_text org.bicsi.canada2015:login_text}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_login_view_logout_text org.bicsi.canada2015:logout_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_confirm_logout org.bicsi.fall2015:confirm_logout}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_fetch_user_info org.bicsi.fall2015:fetch_user_info}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_login_text org.bicsi.fall2015:login_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_logout_text org.bicsi.fall2015:logout_text}</code></td><td></td></tr>
            </table>
            @see #com_facebook_login_view_confirm_logout
            @see #com_facebook_login_view_fetch_user_info
@@ -793,7 +793,7 @@ containing a value of this type.
             0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004
         };
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#confirm_logout}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#confirm_logout}
           attribute's value can be found in the {@link #com_facebook_login_view} array.
 
 
@@ -803,11 +803,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:confirm_logout
+          @attr name org.bicsi.fall2015:confirm_logout
         */
         public static final int com_facebook_login_view_confirm_logout = 0;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#fetch_user_info}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#fetch_user_info}
           attribute's value can be found in the {@link #com_facebook_login_view} array.
 
 
@@ -817,11 +817,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:fetch_user_info
+          @attr name org.bicsi.fall2015:fetch_user_info
         */
         public static final int com_facebook_login_view_fetch_user_info = 1;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#login_text}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#login_text}
           attribute's value can be found in the {@link #com_facebook_login_view} array.
 
 
@@ -831,11 +831,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:login_text
+          @attr name org.bicsi.fall2015:login_text
         */
         public static final int com_facebook_login_view_login_text = 2;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#logout_text}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#logout_text}
           attribute's value can be found in the {@link #com_facebook_login_view} array.
 
 
@@ -845,7 +845,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:logout_text
+          @attr name org.bicsi.fall2015:logout_text
         */
         public static final int com_facebook_login_view_logout_text = 3;
         /** Attributes that can be used with a com_facebook_picker_fragment.
@@ -854,13 +854,13 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_background org.bicsi.canada2015:done_button_background}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_text org.bicsi.canada2015:done_button_text}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_extra_fields org.bicsi.canada2015:extra_fields}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_show_pictures org.bicsi.canada2015:show_pictures}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_show_title_bar org.bicsi.canada2015:show_title_bar}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_title_bar_background org.bicsi.canada2015:title_bar_background}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_title_text org.bicsi.canada2015:title_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_background org.bicsi.fall2015:done_button_background}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_text org.bicsi.fall2015:done_button_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_extra_fields org.bicsi.fall2015:extra_fields}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_show_pictures org.bicsi.fall2015:show_pictures}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_show_title_bar org.bicsi.fall2015:show_title_bar}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_title_bar_background org.bicsi.fall2015:title_bar_background}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_title_text org.bicsi.fall2015:title_text}</code></td><td></td></tr>
            </table>
            @see #com_facebook_picker_fragment_done_button_background
            @see #com_facebook_picker_fragment_done_button_text
@@ -875,17 +875,17 @@ containing a value of this type.
             0x7f010009, 0x7f01000a, 0x7f01000b
         };
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#done_button_background}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#done_button_background}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name org.bicsi.canada2015:done_button_background
+          @attr name org.bicsi.fall2015:done_button_background
         */
         public static final int com_facebook_picker_fragment_done_button_background = 6;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#done_button_text}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#done_button_text}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -895,11 +895,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:done_button_text
+          @attr name org.bicsi.fall2015:done_button_text
         */
         public static final int com_facebook_picker_fragment_done_button_text = 4;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#extra_fields}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#extra_fields}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -909,11 +909,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:extra_fields
+          @attr name org.bicsi.fall2015:extra_fields
         */
         public static final int com_facebook_picker_fragment_extra_fields = 1;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#show_pictures}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#show_pictures}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -923,11 +923,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:show_pictures
+          @attr name org.bicsi.fall2015:show_pictures
         */
         public static final int com_facebook_picker_fragment_show_pictures = 0;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#show_title_bar}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#show_title_bar}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -937,21 +937,21 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:show_title_bar
+          @attr name org.bicsi.fall2015:show_title_bar
         */
         public static final int com_facebook_picker_fragment_show_title_bar = 2;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#title_bar_background}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#title_bar_background}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name org.bicsi.canada2015:title_bar_background
+          @attr name org.bicsi.fall2015:title_bar_background
         */
         public static final int com_facebook_picker_fragment_title_bar_background = 5;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#title_text}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#title_text}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -961,7 +961,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:title_text
+          @attr name org.bicsi.fall2015:title_text
         */
         public static final int com_facebook_picker_fragment_title_text = 3;
         /** Attributes that can be used with a com_facebook_place_picker_fragment.
@@ -970,10 +970,10 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_place_picker_fragment_radius_in_meters org.bicsi.canada2015:radius_in_meters}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_place_picker_fragment_results_limit org.bicsi.canada2015:results_limit}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_place_picker_fragment_search_text org.bicsi.canada2015:search_text}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_place_picker_fragment_show_search_box org.bicsi.canada2015:show_search_box}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_radius_in_meters org.bicsi.fall2015:radius_in_meters}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_results_limit org.bicsi.fall2015:results_limit}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_search_text org.bicsi.fall2015:search_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_show_search_box org.bicsi.fall2015:show_search_box}</code></td><td></td></tr>
            </table>
            @see #com_facebook_place_picker_fragment_radius_in_meters
            @see #com_facebook_place_picker_fragment_results_limit
@@ -984,7 +984,7 @@ containing a value of this type.
             0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f
         };
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#radius_in_meters}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#radius_in_meters}
           attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
 
 
@@ -994,11 +994,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:radius_in_meters
+          @attr name org.bicsi.fall2015:radius_in_meters
         */
         public static final int com_facebook_place_picker_fragment_radius_in_meters = 0;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#results_limit}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#results_limit}
           attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
 
 
@@ -1008,11 +1008,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:results_limit
+          @attr name org.bicsi.fall2015:results_limit
         */
         public static final int com_facebook_place_picker_fragment_results_limit = 1;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#search_text}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#search_text}
           attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
 
 
@@ -1022,11 +1022,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:search_text
+          @attr name org.bicsi.fall2015:search_text
         */
         public static final int com_facebook_place_picker_fragment_search_text = 2;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#show_search_box}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#show_search_box}
           attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
 
 
@@ -1036,7 +1036,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:show_search_box
+          @attr name org.bicsi.fall2015:show_search_box
         */
         public static final int com_facebook_place_picker_fragment_show_search_box = 3;
         /** Attributes that can be used with a com_facebook_profile_picture_view.
@@ -1045,8 +1045,8 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_profile_picture_view_is_cropped org.bicsi.canada2015:is_cropped}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_profile_picture_view_preset_size org.bicsi.canada2015:preset_size}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_profile_picture_view_is_cropped org.bicsi.fall2015:is_cropped}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_profile_picture_view_preset_size org.bicsi.fall2015:preset_size}</code></td><td></td></tr>
            </table>
            @see #com_facebook_profile_picture_view_is_cropped
            @see #com_facebook_profile_picture_view_preset_size
@@ -1055,7 +1055,7 @@ containing a value of this type.
             0x7f010010, 0x7f010011
         };
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#is_cropped}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#is_cropped}
           attribute's value can be found in the {@link #com_facebook_profile_picture_view} array.
 
 
@@ -1065,11 +1065,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name org.bicsi.canada2015:is_cropped
+          @attr name org.bicsi.fall2015:is_cropped
         */
         public static final int com_facebook_profile_picture_view_is_cropped = 1;
         /**
-          <p>This symbol is the offset where the {@link org.bicsi.canada2015.R.attr#preset_size}
+          <p>This symbol is the offset where the {@link org.bicsi.fall2015.R.attr#preset_size}
           attribute's value can be found in the {@link #com_facebook_profile_picture_view} array.
 
 
@@ -1083,7 +1083,7 @@ containing a value of this type.
 <tr><td><code>normal</code></td><td>-3</td><td></td></tr>
 <tr><td><code>large</code></td><td>-4</td><td></td></tr>
 </table>
-          @attr name org.bicsi.canada2015:preset_size
+          @attr name org.bicsi.fall2015:preset_size
         */
         public static final int com_facebook_profile_picture_view_preset_size = 0;
     };

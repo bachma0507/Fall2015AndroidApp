@@ -388,7 +388,7 @@ public class MizeUtil {
 			// Get the name of the SIM operator
 			String simOperatorName = tm.getSimOperatorName();
 			// -- Requires READ_PHONE_STATE uses-permission --
-			// Get the SIM’s serial number
+			// Get the SIMï¿½s serial number
 			String simSerial = tm.getSimSerialNumber();
 		}
 		}
