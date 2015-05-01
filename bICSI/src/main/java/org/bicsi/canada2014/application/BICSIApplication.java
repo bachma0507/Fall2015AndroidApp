@@ -22,7 +22,7 @@ public class BICSIApplication extends Application {
 		  
 		  ParseObject.registerSubclass(Meal.class);
 
-	    Parse.initialize(this, "Ag86hjT9oVi1ok806lvlVyGgdnh1Mi7J2cxcyBSA", "Tkx1x796SC7ChYdJRkImEmvJHh9UkK4YbWoadfRo");
+	    Parse.initialize(this, "mLUbtG8L32TT1qDsSkEHyh0ONq0j2HG2pSPT5V4h", "oxeGIrPi9BxZrpv7Lx7pJyGxJ0WA7tcBMEg21fFs");
 	    PushService.setDefaultPushCallback(this, MainActivity.class);
 	    
 	    super.onCreate();
