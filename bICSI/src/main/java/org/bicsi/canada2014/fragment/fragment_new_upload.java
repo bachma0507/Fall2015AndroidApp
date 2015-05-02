@@ -86,6 +86,7 @@ public class fragment_new_upload extends Fragment {
 		});
 		
 		saveButton = ((Button) v.findViewById(R.id.save_button));
+        saveButton.setEnabled(false);
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -233,6 +234,7 @@ public class fragment_new_upload extends Fragment {
 		ParseFile photoFile = ((NewMealActivity) getActivity())
 				.getCurrentMeal().getPhotoFile();
 		if (photoFile != null) {
+            saveButton.setEnabled(true);
 			photoPreview.setParseFile(photoFile);
 			photoPreview.loadInBackground(new GetDataCallback() {
 				@Override
@@ -241,6 +243,13 @@ public class fragment_new_upload extends Fragment {
 				}
 			});
 		}
+
+        /*else if (photoFile == null){
+
+            Toast.makeText(getActivity(),
+                    "No image found! Please provide an image.",
+                    Toast.LENGTH_LONG).show();
+        }*/
 	}
 	
 	protected void hideKeyboard(View view)

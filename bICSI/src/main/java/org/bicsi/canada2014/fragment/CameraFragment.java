@@ -136,21 +136,31 @@ public class CameraFragment extends Fragment {
 
 		// Save the scaled image to Parse
 		photoFile = new ParseFile("img", scaledData);
-		photoFile.saveInBackground(new SaveCallback() {
-			
-			public void done(ParseException e) {
-				
-				if (e != null) {
-					Toast.makeText(getActivity(),
-							"Error saving: " + e.getMessage(),
-							Toast.LENGTH_LONG).show();
-				} else {
-					
-					addPhotoToMealAndReturn(photoFile);
-					
-				}
-			}
-		});
+        if (photoFile == null){
+
+            Toast.makeText(getActivity(),
+                    "No image found! Please provide an image.",
+                    Toast.LENGTH_LONG).show();
+
+        }
+
+        else {
+            photoFile.saveInBackground(new SaveCallback() {
+
+                public void done(ParseException e) {
+
+                    if (e != null) {
+                        Toast.makeText(getActivity(),
+                                "Error saving: " + e.getMessage(),
+                                Toast.LENGTH_LONG).show();
+                    } else {
+
+                        addPhotoToMealAndReturn(photoFile);
+
+                    }
+                }
+            });
+        }
 	}
 
 	/*
