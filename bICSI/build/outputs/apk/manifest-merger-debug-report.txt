@@ -251,7 +251,7 @@ ADDED from AndroidManifest.xml:179:9
 		ADDED from AndroidManifest.xml:181:13
 	android:name
 		ADDED from AndroidManifest.xml:180:13
-intent-filter#com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION+org.bicsi.canada2015
+intent-filter#com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION+org.bicsi.fall2015
 ADDED from AndroidManifest.xml:182:13
 action#com.google.android.c2dm.intent.RECEIVE
 ADDED from AndroidManifest.xml:183:17
@@ -261,7 +261,7 @@ action#com.google.android.c2dm.intent.REGISTRATION
 ADDED from AndroidManifest.xml:184:17
 	android:name
 		ADDED from AndroidManifest.xml:184:25
-category#org.bicsi.canada2015
+category#org.bicsi.fall2015
 ADDED from AndroidManifest.xml:187:17
 	android:name
 		ADDED from AndroidManifest.xml:187:27

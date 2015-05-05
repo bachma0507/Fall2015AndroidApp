@@ -325,11 +325,11 @@ public class ConfSchedDetailFragment extends Fragment implements AdapterView.OnI
 
 	}
 
-	@Override
+	/*@Override
 	public void onResume() {
 		super.onResume();
 		((MainActivity)getActivity()).updateTracker("Home Tab");
-	}
+	}*/
 	
 	//extend the SimpleCursorAdapter to create a custom class where we 
 		 //can override the getView to change the row colors

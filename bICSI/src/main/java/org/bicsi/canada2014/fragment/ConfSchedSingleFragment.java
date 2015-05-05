@@ -17,6 +17,7 @@ import android.widget.TextView;
 public class ConfSchedSingleFragment extends Fragment  {
 	
 	private NavigateToTabFragmentListener mCallback;
+	private Fragment myNoteFragment = new SessionNoteFragment();
 	
 	public String newFunctioncd;
 	
@@ -40,6 +41,7 @@ public class ConfSchedSingleFragment extends Fragment  {
 	TextView trainer6lname;
 	TextView speakerslabel;
 	Button surveybutton;
+	Button notesbutton;
 	
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
@@ -80,12 +82,14 @@ public class ConfSchedSingleFragment extends Fragment  {
 		trainer6lname = (TextView)v.findViewById(R.id.trainer6lname);
 		speakerslabel = (TextView)v.findViewById(R.id.speakers_label);
 		surveybutton = (Button)v.findViewById(R.id.survey_button);
+		notesbutton = (Button)v.findViewById(R.id.notes_button);
 		
 		
 		Bundle bundle = getArguments();
 				if(bundle != null){
 				
 				newFunctioncd = bundle.getString("_id");
+					String funccd = newFunctioncd;
 				
 				if(newFunctioncd.contains("CONCSES") || newFunctioncd.contains("PRECON") || newFunctioncd.contains("GS_TUES") || newFunctioncd.contains("GS_THURS") == true){
 					speakerslabel.setVisibility(View.VISIBLE);
@@ -174,8 +178,26 @@ public class ConfSchedSingleFragment extends Fragment  {
 					trainer6fname.setVisibility(View.GONE);
 					trainer6lname.setVisibility(View.GONE);
 				}
-				
-				
+					//System.out.println("The session title is: " + ftitle + ".");
+
+					//final SessionNoteFragment myNoteFragment = new SessionNoteFragment();
+					Bundle bundle2 = new Bundle();
+
+					bundle2.putString("functiontitle", ftitle);
+					bundle2.putString("_id", funccd);
+
+					myNoteFragment.setArguments(bundle2);
+
+					//mCallback.navigateToTabFragment(myNoteFragment, null); //interface method
+
+
+				notesbutton.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						//openInternalWebview("http://www.bicsi.org/m/Schedule.aspx");
+
+						mCallback.navigateToTabFragment(myNoteFragment, null);
+					}
+				});
 				
 				surveybutton.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
@@ -230,10 +252,10 @@ public class ConfSchedSingleFragment extends Fragment  {
 		((MainActivity)getActivity()).updateTracker("Home Tab");
 	}*/
 	
-	@Override
+	/*@Override
 	public void onResume() {
 		super.onResume();
 		((MainActivity)getActivity()).updateTracker("Home Tab");
-	}
+	}*/
 	
 }

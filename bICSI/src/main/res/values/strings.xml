@@ -50,6 +50,7 @@
     <string name="populationlabel">"Comment : "</string>
     
     <string name="comment_label">Add a Comment</string>
+    <string name="note_label">Add a Note</string>
     <string name="save_button_text">Save</string>
     <string name="cancel_button_text">Cancel</string>
     
@@ -58,6 +59,7 @@
 	<string name="privacylink">View Privacy Policy</string>
 	<string name="uploadwarning">Please tap the Camera icon to take a photo. All photos and comments will be reviewed before being posted to the gallery. Any photos with potential indecency issues will not be posted and your user account will be terminated.</string>
 	<string name="comment_hint">Required</string>
+    <string name="note_hint">Enter your notes...</string>
 	
 	
 	<string name="bicsialerts">Alerts</string>
