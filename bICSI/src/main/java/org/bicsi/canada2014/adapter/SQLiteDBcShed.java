@@ -8,7 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.database.Cursor;
 
-public class SQLiteDBcShed {
+public class
+		SQLiteDBcShed {
 
 	public static final String KEY_ID = "_id";
 	 public static final String KEY_DAY = "day";
