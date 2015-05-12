@@ -1,10 +1,11 @@
 package org.bicsi.canada2014.fragment;
 
-import org.bicsi.canada2014.activities.MainActivity;
+
 import org.bicsi.canada2014.common.MizeUtil.NavigateToTabFragmentListener;
 import org.bicsi.fall2015.R;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ public class ConfSchedSingleFragment extends Fragment  {
 	
 	private NavigateToTabFragmentListener mCallback;
 	private Fragment myNoteFragment = new SessionNoteFragment();
+
 	
 	public String newFunctioncd;
 	
@@ -58,6 +60,8 @@ public class ConfSchedSingleFragment extends Fragment  {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+
+		setRetainInstance(true);
 
 		super.onCreateView(inflater, container, savedInstanceState);
 		final View v = inflater.inflate(R.layout.fragment_confschedule_single, container, false);
@@ -188,21 +192,27 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 					myNoteFragment.setArguments(bundle2);
 
+					FragmentTransaction transaction = getActivity().getFragmentManager()
+					.beginTransaction();
+					transaction.addToBackStack(null);
+					transaction.commit();
+
 					//mCallback.navigateToTabFragment(myNoteFragment, null); //interface method
 
 
 				notesbutton.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
-						//openInternalWebview("http://www.bicsi.org/m/Schedule.aspx");
 
 						mCallback.navigateToTabFragment(myNoteFragment, null);
+
+
 					}
 				});
 				
 				surveybutton.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
 						String urlEndStr = newFunctioncd.replace("'", "");
-						
+
 						Uri uri = Uri.parse("https://www.research.net/s/" + urlEndStr);
 						Intent browserIntent = new Intent(Intent.ACTION_VIEW);
 						browserIntent.setDataAndType(uri, "text/html");
@@ -226,17 +236,20 @@ public class ConfSchedSingleFragment extends Fragment  {
 						myWebViewFragment.setArguments(bundle);
 
 						mCallback.navigateToTabFragment(myWebViewFragment, null);*/
-						
+
 						//openInternalWebview("https://www.research.net/s/" + urlEndStr);
 						//System.out.println("https://www.research.net/s/" + urlEndStr);
 					}
 				});
 				
 				}
+
+
 				
 				return v;
 	}
-	
+
+
 	/*private void openInternalWebview(CharSequence urlToOpen) {
 		if (urlToOpen == null) {
 			return;

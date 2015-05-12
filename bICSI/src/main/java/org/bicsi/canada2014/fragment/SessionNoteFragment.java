@@ -5,6 +5,7 @@ package org.bicsi.canada2014.fragment;
  */
 
 
+
 import org.bicsi.canada2014.common.MizeUtil.NavigateToTabFragmentListener;
 import org.bicsi.fall2015.R;
 import android.app.Activity;
@@ -16,7 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.AdapterView;
+
 import org.bicsi.canada2014.SessionNotes;
 import org.bicsi.canada2014.adapter.SQLiteDBSessNotes;
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class SessionNoteFragment extends Fragment {
     Button savebutton;
     Button cancelbutton;
     List<SessionNotes> list = new ArrayList<SessionNotes>();
+    List<SessionNotes> noteList = new ArrayList<SessionNotes>();
 
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -51,6 +53,8 @@ public class SessionNoteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        //setRetainInstance(true);
 
         super.onCreateView(inflater, container, savedInstanceState);
         final View v = inflater.inflate(R.layout.fragment_session_note, container, false);
@@ -75,11 +79,17 @@ public class SessionNoteFragment extends Fragment {
         final String funccd = bundle.getString("_id");
         System.out.println("The session code is: " + funccd + ".");
 
+        //SessionNotes myNote = sqlite_obj.getNote(funccd);
+        //printNote(myNote);
+
         savebutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //openInternalWebview("http://www.bicsi.org/m/Schedule.aspx");
 
+
+
                 SessionNotes note = new SessionNotes();
+                //SessionNotes note = ((NewNoteActivity) getActivity()).getCurrentSessionNotes();
                 note.code = funccd;
                 note.title = ftitle;
                 note.desc = comment.getText().toString();
@@ -88,6 +98,8 @@ public class SessionNoteFragment extends Fragment {
                 list = sqlite_obj.getAllNotes();
                 //System.out.println(print(list));
                 print(list);
+
+                //back();
             }
         });
 
@@ -96,6 +108,15 @@ public class SessionNoteFragment extends Fragment {
         return v;
     }
 
+    private void printNote(SessionNotes myNote){
+
+        String value = "";
+
+            value = value+"id: "+myNote._id+", funccode: "+myNote.code+" title: "+myNote.title+" comment: "+myNote.desc+"\n";
+
+        System.out.println(value);
+
+    }
     private void print(List<SessionNotes> list) {
         // TODO Auto-generated method stub
         String value = "";
@@ -105,6 +126,15 @@ public class SessionNoteFragment extends Fragment {
         System.out.println(value);
     }
 
+    /*private void back() {
+        FragmentManager fm = getActivity().getFragmentManager();
+        fm.popBackStack("ConfSchedSingleFragment",
+                FragmentManager.POP_BACK_STACK_INCLUSIVE);
+    }*/
+
+    //FragmentManager fragmentManager = getFragmentManager();
+    //FragmentTransaction fragmentTransaction;
+    //fragmentTransaction.addToBackStack(null);
     /*@Override
     public void onResume() {
         super.onResume();

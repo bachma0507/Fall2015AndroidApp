@@ -102,14 +102,14 @@ public class SQLiteDBSessNotes {
     }
 
     // Update Database function
-    public void UpdateNote(String code, String title, String desc) {
+    public void UpdateNote(SessionNotes note) {
         ContentValues editValues = new ContentValues();
         //editValues.put(KEY_FUNCCD, code);
-        editValues.put(KEY_FUNCTITLE, title);
-        editValues.put(KEY_FUNCDESC, desc);
+        //editValues.put(KEY_FUNCTITLE, title);
+        editValues.put(KEY_FUNCDESC, note.desc);
 
         //open();
-        db.update(SQLITE_TABLE, editValues, KEY_FUNCCD + "=" + code, null);
+        db.update(SQLITE_TABLE, editValues, KEY_FUNCCD + "=" + note.code, null);
         //close();
     }
 
@@ -175,6 +175,28 @@ public class SQLiteDBSessNotes {
         return mCursor;
 
     }
+
+    public SessionNotes getNote(String code) {
+        //SQLiteDatabase db = this.getReadableDatabase();
+
+        // SELECT * FROM students WHERE id = ?;
+        String selectQuery = "SELECT  * FROM " + SQLITE_TABLE + " WHERE "
+                + KEY_FUNCCD + " = " + code;
+        Log.d(TAG, selectQuery);
+
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        if (c != null)
+            c.moveToFirst();
+
+        SessionNotes note = new SessionNotes();
+        note.code = c.getString(c.getColumnIndex(KEY_FUNCCD));
+        note.title = c.getString(c.getColumnIndex(KEY_FUNCTITLE));
+        note.desc = c.getString(c.getColumnIndex(KEY_FUNCDESC));
+
+        return note;
+    }
+
 
     public Cursor fetchAllNotes() {
 
