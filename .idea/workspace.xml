@@ -17,9 +17,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: org.bicsi.fall2015" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ea47875-db0c-4818-8b77-9a42a387f902" name="Default" comment="Got backbutton on Notes to work correctly using Activity">
+    <list default="true" id="4ea47875-db0c-4818-8b77-9a42a387f902" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bICSI/build/intermediates/exploded-aar/BICSI/facebookSDK/unspecified/classes.jar" afterPath="$PROJECT_DIR$/bICSI/build/intermediates/exploded-aar/BICSI/facebookSDK/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/facebookSDK/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/facebookSDK/build/intermediates/bundles/release/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/facebookSDK/build/outputs/aar/facebookSDK-release.aar" afterPath="$PROJECT_DIR$/facebookSDK/build/outputs/aar/facebookSDK-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
@@ -27,10 +26,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bICSI/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/bICSI/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bICSI/src/main/java/org/bicsi/canada2014/activities/NotesActivity.java" afterPath="$PROJECT_DIR$/bICSI/src/main/java/org/bicsi/canada2014/activities/NotesActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bICSI/src/main/java/org/bicsi/canada2014/adapter/SQLiteDBSessNotes.java" afterPath="$PROJECT_DIR$/bICSI/src/main/java/org/bicsi/canada2014/adapter/SQLiteDBSessNotes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bICSI/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/bICSI/build/intermediates/incremental/mergeResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bICSI/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/bICSI/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bICSI/build/intermediates/res/debug/values/values.xml" afterPath="$PROJECT_DIR$/bICSI/build/intermediates/res/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -1938,12 +1934,18 @@
       <option name="project" value="LOCAL" />
       <updated>1433290689513</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add and edit notes working">
+      <created>1433356324622</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1433356324622</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1899" height="1002" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2031,7 +2033,8 @@
     <MESSAGE value="First commit for CopyOverMainActivity branch" />
     <MESSAGE value="Updated icons and background" />
     <MESSAGE value="Got backbutton on Notes to work correctly using Activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got backbutton on Notes to work correctly using Activity" />
+    <MESSAGE value="Add and edit notes working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add and edit notes working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2303,13 +2306,13 @@
         <state vertical-scroll-proportion="286.2">
           <caret line="104" column="36" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3371#3381#0" expanded="true" />
-            <element signature="e#3441#3451#0" expanded="true" />
-            <element signature="e#3511#3521#0" expanded="true" />
-            <element signature="e#3581#3591#0" expanded="true" />
-            <element signature="e#3651#3661#0" expanded="true" />
-            <element signature="e#57528#57541#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3371#3381#0" expanded="false" />
+            <element signature="e#3441#3451#0" expanded="false" />
+            <element signature="e#3511#3521#0" expanded="false" />
+            <element signature="e#3581#3591#0" expanded="false" />
+            <element signature="e#3651#3661#0" expanded="false" />
+            <element signature="e#57528#57541#0" expanded="false" />
           </folding>
         </state>
       </provider>
