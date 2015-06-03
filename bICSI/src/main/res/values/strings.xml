@@ -50,7 +50,7 @@
     <string name="populationlabel">"Comment : "</string>
     
     <string name="comment_label">Add a Comment</string>
-    <string name="note_label">Add a Note</string>
+    <string name="note_label">Add/Edit a Note</string>
     <string name="save_button_text">Save</string>
     <string name="cancel_button_text">Cancel</string>
     

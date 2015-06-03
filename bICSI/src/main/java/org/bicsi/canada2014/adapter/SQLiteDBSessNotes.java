@@ -102,15 +102,16 @@ public class SQLiteDBSessNotes {
     }
 
     // Update Database function
-    public void UpdateNote(SessionNotes note) {
+    public long UpdateNote(SessionNotes note) {
         ContentValues editValues = new ContentValues();
-        //editValues.put(KEY_FUNCCD, code);
-        //editValues.put(KEY_FUNCTITLE, title);
+        editValues.put(KEY_FUNCCD, note.code);
+        editValues.put(KEY_FUNCTITLE, note.title);
         editValues.put(KEY_FUNCDESC, note.desc);
 
         //open();
-        db.update(SQLITE_TABLE, editValues, KEY_FUNCCD + "=" + note.code, null);
+        long update = db.update(SQLITE_TABLE, editValues, KEY_FUNCCD + " = '" + note.code + "'", null);
         //close();
+        return update;
     }
 
     // Delete Database function
@@ -166,7 +167,7 @@ public class SQLiteDBSessNotes {
         else {
             mCursor = db.query(true, SQLITE_TABLE, new String[] {
                             KEY_FUNCCD, KEY_FUNCTITLE, KEY_FUNCDESC},
-                    KEY_FUNCCD + " like '%" + inputText + "%'", null,
+                    KEY_FUNCCD + " = '" + inputText + "'", null,
                     null, null, null, null);
         }
         if (mCursor != null) {
@@ -181,7 +182,7 @@ public class SQLiteDBSessNotes {
 
         // SELECT * FROM students WHERE id = ?;
         String selectQuery = "SELECT  * FROM " + SQLITE_TABLE + " WHERE "
-                + KEY_FUNCCD + " = " + code;
+                + KEY_FUNCCD + " = '" + code + "'";
         Log.d(TAG, selectQuery);
 
         Cursor c = db.rawQuery(selectQuery, null);
