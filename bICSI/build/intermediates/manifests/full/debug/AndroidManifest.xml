@@ -173,7 +173,12 @@
             android:name="org.bicsi.canada2014.activities.NewMealActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" >
-            android:label="@string/title_activity_new_meal" >
+        android:label="@string/title_activity_new_meal" >
+        </activity>
+        <activity
+            android:name="org.bicsi.canada2014.activities.NotesActivity"
+            android:label="@string/title_activity_new_note"
+            android:screenOrientation="portrait" >
         </activity>
 
         <service android:name="com.parse.PushService" />

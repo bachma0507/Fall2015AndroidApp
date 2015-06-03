@@ -1,6 +1,7 @@
 package org.bicsi.canada2014.fragment;
 
 
+import org.bicsi.canada2014.activities.NotesActivity;
 import org.bicsi.canada2014.common.MizeUtil.NavigateToTabFragmentListener;
 import org.bicsi.fall2015.R;
 import android.app.Activity;
@@ -89,7 +90,7 @@ public class ConfSchedSingleFragment extends Fragment  {
 		notesbutton = (Button)v.findViewById(R.id.notes_button);
 		
 		
-		Bundle bundle = getArguments();
+		final Bundle bundle = getArguments();
 				if(bundle != null){
 				
 				newFunctioncd = bundle.getString("_id");
@@ -200,14 +201,31 @@ public class ConfSchedSingleFragment extends Fragment  {
 					//mCallback.navigateToTabFragment(myNoteFragment, null); //interface method
 
 
-				notesbutton.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View v) {
+				//notesbutton.setOnClickListener(new View.OnClickListener() {
+					//public void onClick(View v) {
 
-						mCallback.navigateToTabFragment(myNoteFragment, null);
+						//mCallback.navigateToTabFragment(myNoteFragment, null);
+
 
 
 					}
-				});
+				//});
+
+		notesbutton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				//EditText et= (EditText)context.findViewById(R.id.txt_edit);
+				String myTitle = bundle.getString("functiontitle");
+				String myId = bundle.getString("_id");
+//create an Intent object
+				Intent intent = new Intent(getActivity(), NotesActivity.class);
+//add data to the Intent object
+				intent.putExtra("functiontitle",myTitle );
+				intent.putExtra("_id", myId);
+//start the second activity
+				startActivity(intent);
+			}
+
+		});
 				
 				surveybutton.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
@@ -242,7 +260,7 @@ public class ConfSchedSingleFragment extends Fragment  {
 					}
 				});
 				
-				}
+				//}
 
 
 				

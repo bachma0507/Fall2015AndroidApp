@@ -103,7 +103,15 @@ public class SessionNoteFragment extends Fragment {
             }
         });
 
+        cancelbutton = ((Button) v.findViewById(R.id.cancel_button));
+        cancelbutton.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                getActivity().setResult(Activity.RESULT_CANCELED);
+                getActivity().finish();
+            }
+        });
 
         return v;
     }

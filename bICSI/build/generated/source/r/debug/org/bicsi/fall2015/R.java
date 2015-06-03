@@ -728,13 +728,14 @@ containing a value of this type.
         public static final int title_activity_exhibitor_hall_schedule=0x7f090065;
         public static final int title_activity_main=0x7f090066;
         public static final int title_activity_new_meal=0x7f090067;
-        public static final int training=0x7f090068;
-        public static final int twitter=0x7f090069;
-        public static final int twitterFeed=0x7f09006a;
-        public static final int uploadwarning=0x7f09006b;
-        public static final int version=0x7f09006c;
-        public static final int welcome=0x7f09006d;
-        public static final int you_picked=0x7f09006e;
+        public static final int title_activity_new_note=0x7f090068;
+        public static final int training=0x7f090069;
+        public static final int twitter=0x7f09006a;
+        public static final int twitterFeed=0x7f09006b;
+        public static final int uploadwarning=0x7f09006c;
+        public static final int version=0x7f09006d;
+        public static final int welcome=0x7f09006e;
+        public static final int you_picked=0x7f09006f;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

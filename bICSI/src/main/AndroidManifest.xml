@@ -163,10 +163,16 @@
         </activity>
         
         <activity
-            android:name="org.bicsi.canada2014.activities.NewMealActivity"
+        android:name="org.bicsi.canada2014.activities.NewMealActivity"
+        android:screenOrientation="portrait"
+        android:configChanges="orientation|keyboardHidden">
+        android:label="@string/title_activity_new_meal" >
+    </activity>
+
+        <activity
+            android:name="org.bicsi.canada2014.activities.NotesActivity"
             android:screenOrientation="portrait"
-   			android:configChanges="orientation|keyboardHidden">
-            android:label="@string/title_activity_new_meal" >
+            android:label="@string/title_activity_new_note" >
         </activity>
 
         <service android:name="com.parse.PushService" />

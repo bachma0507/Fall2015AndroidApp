@@ -214,6 +214,7 @@
     <string name="title_activity_exhibitor_hall_schedule">ExhibitorHallScheduleActivity</string>
     <string name="title_activity_main">BICSI App</string>
     <string name="title_activity_new_meal">Photo Upload</string>
+    <string name="title_activity_new_note">Session Note</string>
     <string name="training">Training and</string>
     <string name="twitter">Twitter</string>
     <string name="twitterFeed">twitter feed</string>
