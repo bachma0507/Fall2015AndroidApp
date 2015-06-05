@@ -1,13 +1,17 @@
 package org.bicsi.canada2014.fragment;
 
 
+import org.bicsi.canada2014.Planner;
 import org.bicsi.canada2014.activities.NotesActivity;
+import org.bicsi.canada2014.adapter.SQLiteDBAllData;
+import org.bicsi.canada2014.adapter.SQLiteDBPlanner;
 import org.bicsi.canada2014.common.MizeUtil.NavigateToTabFragmentListener;
 import org.bicsi.fall2015.R;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,13 +19,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConfSchedSingleFragment extends Fragment  {
 	
 	private NavigateToTabFragmentListener mCallback;
 	private Fragment myNoteFragment = new SessionNoteFragment();
+	private SQLiteDBPlanner sqlite_obj;
 
-	
+	List<Planner> list = new ArrayList<Planner>();
+
+
 	public String newFunctioncd;
 	
 	TextView title;
@@ -45,6 +56,7 @@ public class ConfSchedSingleFragment extends Fragment  {
 	TextView speakerslabel;
 	Button surveybutton;
 	Button notesbutton;
+	Button plannerbutton;
 	
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
@@ -66,6 +78,10 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 		super.onCreateView(inflater, container, savedInstanceState);
 		final View v = inflater.inflate(R.layout.fragment_confschedule_single, container, false);
+
+		sqlite_obj = new SQLiteDBPlanner(getActivity());
+
+		sqlite_obj.open();
 		
 		title = (TextView)v.findViewById(R.id.functiontitle);
 		date = (TextView)v.findViewById(R.id.functiondate);
@@ -88,6 +104,7 @@ public class ConfSchedSingleFragment extends Fragment  {
 		speakerslabel = (TextView)v.findViewById(R.id.speakers_label);
 		surveybutton = (Button)v.findViewById(R.id.survey_button);
 		notesbutton = (Button)v.findViewById(R.id.notes_button);
+		plannerbutton = (Button)v.findViewById(R.id.planner_button);
 		
 		
 		final Bundle bundle = getArguments();
@@ -206,6 +223,8 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 						//mCallback.navigateToTabFragment(myNoteFragment, null);
 
+					//sqlite_obj = new SQLiteDBAllData(getActivity());
+
 
 
 					}
@@ -226,8 +245,42 @@ public class ConfSchedSingleFragment extends Fragment  {
 			}
 
 		});
+
+		plannerbutton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				String pfunctioncd = newFunctioncd.replace("'", "");
+				String ptitle = bundle.getString("functiontitle");
+				String pdesc = bundle.getString("functiondescription");
+				String plocation = bundle.getString("LOCATIONNAME");
+				String pdate = bundle.getString("fucntioindate");
+				String pstart = bundle.getString("functionStartTimeStr");
+				String pend = bundle.getString("functionEndTimeStr");
+
+				Planner plannerItem = new Planner();
+
+				plannerItem.code = pfunctioncd;
+				plannerItem.title = ptitle;
+				plannerItem.desc = pdesc;
+				plannerItem.location = plocation;
+				plannerItem.date = pdate;
+				plannerItem.start = pstart;
+				plannerItem.end = pend;
+
+				sqlite_obj.insertPlanner(plannerItem);
+
+				Toast.makeText(
+						getActivity().getApplicationContext(),
+						"Added to planner!",
+						Toast.LENGTH_SHORT).show();
+
+				list = sqlite_obj.getAllPlannerItems();
+
+				print(list);
+			}
+
+		});
 				
-				surveybutton.setOnClickListener(new View.OnClickListener() {
+		surveybutton.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
 						String urlEndStr = newFunctioncd.replace("'", "");
 
@@ -268,25 +321,17 @@ public class ConfSchedSingleFragment extends Fragment  {
 	}
 
 
-	/*private void openInternalWebview(CharSequence urlToOpen) {
-		if (urlToOpen == null) {
-			return;
+	private void print(List<Planner> list) {
+		// TODO Auto-generated method stub
+		String value = "";
+		for(Planner pl : list){
+			value = value+"id: "+pl._id+", funccode: "+pl.code+" title: "+pl.title+" description: "+pl.desc+" location: "+pl.location+" date: "+pl.date+" start: "+pl.start+" end: "+pl.end+"\n";
 		}
-		String urlString = urlToOpen.toString();
-		((MainActivity)getActivity()).mWebViewURL = urlString;
-		mCallback.navigateToTabFragment(newFragment, null);
-	}
+		System.out.println(value);
 
-	@Override
-	public void onResume() {
-		super.onResume();
-		((MainActivity)getActivity()).updateTracker("Home Tab");
-	}*/
-	
-	/*@Override
-	public void onResume() {
-		super.onResume();
-		((MainActivity)getActivity()).updateTracker("Home Tab");
-	}*/
+		sqlite_obj.close();
+
+
+	}
 	
 }

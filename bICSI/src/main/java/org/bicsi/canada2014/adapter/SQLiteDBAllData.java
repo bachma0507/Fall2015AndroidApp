@@ -63,6 +63,8 @@ public class SQLiteDBAllData {
 	public static final String KEY_trainer6city = "trainer6city";
 	public static final String KEY_trainer6state = "trainer6state";
 	public static final String KEY_trainer6country = "trainer6country";
+
+	public static final String KEY_planner = "planner";
 	 
 	 
 	 private static final String TAG = "DbAdapter";
@@ -75,7 +77,7 @@ public class SQLiteDBAllData {
 
 	 private final Context context;
 
-	 private static final String DATABASE_CREATE = "create table alldata (_id text not null, functiontitle text not null, functiondescription  text,LOCATIONNAME text, fucntioindate text, functionStartTime text, functionStartTimeStr text, functionEndTime text, functionEndTimeStr text, trainer1firstname text, trainer1lastname text,trainer1org text, trainer1city text, trainer1state text, trainer1country text, trainer2firstname text, trainer2lastname text, trainer2org text, trainer2city text, trainer2state text, trainer2country text, trainer3firstname text, trainer3lastname text, trainer3org text, trainer3city text, trainer3state text, trainer3country text, trainer4firstname text, trainer4lastname text, trainer4org text, trainer4city text, trainer4state text, trainer4country text, trainer5firstname text, trainer5lastname text, trainer5org text, trainer5city text, trainer5state text, trainer5country text, trainer6firstname text, trainer6lastname text, trainer6org text, trainer6city text, trainer6state text, trainer6country text);";
+	 private static final String DATABASE_CREATE = "create table alldata (_id text not null, functiontitle text not null, functiondescription  text,LOCATIONNAME text, fucntioindate text, functionStartTime text, functionStartTimeStr text, functionEndTime text, functionEndTimeStr text, trainer1firstname text, trainer1lastname text,trainer1org text, trainer1city text, trainer1state text, trainer1country text, trainer2firstname text, trainer2lastname text, trainer2org text, trainer2city text, trainer2state text, trainer2country text, trainer3firstname text, trainer3lastname text, trainer3org text, trainer3city text, trainer3state text, trainer3country text, trainer4firstname text, trainer4lastname text, trainer4org text, trainer4city text, trainer4state text, trainer4country text, trainer5firstname text, trainer5lastname text, trainer5org text, trainer5city text, trainer5state text, trainer5country text, trainer6firstname text, trainer6lastname text, trainer6org text, trainer6city text, trainer6state text, trainer6country text, planner text);";
 
 	 private static class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -179,9 +181,19 @@ public class SQLiteDBAllData {
 				initialValues.put(KEY_trainer6city, trainer6city);
 				initialValues.put(KEY_trainer6state, trainer6state);
 				initialValues.put(KEY_trainer6country, trainer6country);
+				//initialValues.put(KEY_planner, planner);
 			
 	 		return db.insert(SQLITE_TABLE, null, initialValues);
 	 	}
+
+		//Update planner field
+	public long updatePlanner(String planner, String functioncd){
+
+		ContentValues editValues = new ContentValues();
+		editValues.put(KEY_planner, planner);
+
+		return db.update(SQLITE_TABLE, editValues,KEY_ID + "='" + functioncd + "'",null);
+	}
 
 	 //---Delete All Data from table in SQLite DB---
 	 	public void deleteAll() {
@@ -315,5 +327,33 @@ public class SQLiteDBAllData {
 		  return mCursor;
 		 }
 
+
+	public Cursor getAllSChedulesByPlanner(){
+		Cursor mCursor = db.query(SQLITE_TABLE, new String[] {
+						KEY_ID, KEY_functiontitle, KEY_fucntioindate, KEY_functionStartTime, KEY_functionStartTimeStr, KEY_functionEndTime, KEY_functionEndTimeStr, KEY_functiondescription, KEY_LOCATIONNAME, KEY_trainer1firstname, KEY_trainer1lastname, KEY_trainer2firstname, KEY_trainer2lastname, KEY_trainer3firstname, KEY_trainer3lastname, KEY_trainer4firstname, KEY_trainer4lastname,KEY_trainer5firstname, KEY_trainer5lastname, KEY_trainer6firstname, KEY_trainer6lastname, KEY_planner },
+				KEY_planner + " = 'yes' AND (" + KEY_ID + " LIKE 'ATT%' OR " + KEY_ID + " LIKE 'BIC%' OR " + KEY_ID + " LIKE 'BREA%' OR " + KEY_ID + " LIKE 'COM%' OR " + KEY_ID + " LIKE 'CONC%' OR " + KEY_ID + " LIKE 'CONF%' OR " + KEY_ID + " LIKE 'CRED_E%' OR " + KEY_ID + " LIKE 'EH%' OR " + KEY_ID + " LIKE 'GS_TUES_%' OR " + KEY_ID + " LIKE 'GS_THURS_%' OR " + KEY_ID + " LIKE 'EX_REG%' OR " + KEY_ID + " LIKE 'EXAM_CHECK' OR " + KEY_ID + " LIKE 'CSC_%' OR " + KEY_ID + " LIKE 'EXV_REG%' OR " + KEY_ID + " LIKE 'BANQ_COMP' OR " + KEY_ID + " LIKE 'BANQ_RECEP' OR " + KEY_ID + " LIKE 'PRECON%') ORDER BY " + KEY_functionStartTime + ", " + KEY_functionEndTime + " ASC", null, null, null, null, null);
+
+
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+
+	}
+
+
+	public Cursor getSchedulesByFuncCd(String functioncd){
+
+		Cursor mCursor = db.query(SQLITE_TABLE, new String[] {
+						KEY_ID, KEY_functiontitle, KEY_fucntioindate, KEY_functionStartTime, KEY_functionStartTimeStr, KEY_functionEndTime, KEY_functionEndTimeStr, KEY_functiondescription, KEY_LOCATIONNAME, KEY_trainer1firstname, KEY_trainer1lastname, KEY_trainer2firstname, KEY_trainer2lastname, KEY_trainer3firstname, KEY_trainer3lastname, KEY_trainer4firstname, KEY_trainer4lastname,KEY_trainer5firstname, KEY_trainer5lastname, KEY_trainer6firstname, KEY_trainer6lastname, KEY_planner },
+				KEY_ID + " = '" + functioncd + "'", null, null, null, null, null);
+
+
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+
+	}
 }
 

@@ -8,8 +8,20 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     android:orientation="vertical" >
-    
-    
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonStyleSmall"
+            android:text="Add to Planner"
+            android:id="@+id/planner_button" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

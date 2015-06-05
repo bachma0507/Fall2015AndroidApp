@@ -104,8 +104,8 @@ public class SQLiteDBSessNotes {
     // Update Database function
     public long UpdateNote(SessionNotes note) {
         ContentValues editValues = new ContentValues();
-        editValues.put(KEY_FUNCCD, note.code);
-        editValues.put(KEY_FUNCTITLE, note.title);
+        //editValues.put(KEY_FUNCCD, note.code);
+        //editValues.put(KEY_FUNCTITLE, note.title);
         editValues.put(KEY_FUNCDESC, note.desc);
 
         //open();

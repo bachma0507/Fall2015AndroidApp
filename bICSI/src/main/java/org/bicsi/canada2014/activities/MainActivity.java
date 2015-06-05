@@ -18,6 +18,7 @@ import java.util.Locale;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.bicsi.canada2014.fragment.PlannerScheduleFragment;
 import org.bicsi.fall2015.R;
 
 import android.annotation.SuppressLint;
@@ -699,6 +700,7 @@ public class MainActivity extends Activity implements
                         list41= new ArrayList<String>();
                         list42= new ArrayList<String>();
                         list43= new ArrayList<String>();
+                        //list44= new ArrayList<String>();
 
 
 
@@ -793,6 +795,7 @@ public class MainActivity extends Activity implements
                         list41.add(c.getString("trainer6city"));
                         list42.add(c.getString("trainer6state"));
                         list43.add(c.getString("trainer6country"));
+                        //list44.add(c.getString("planner"));
 
 
                         String fucntioindate= c.optString("fucntioindate").toString();
@@ -905,6 +908,7 @@ public class MainActivity extends Activity implements
         tab2 = (LinearLayout) findViewById(R.id.layoutTab2);
         tab3 = (LinearLayout) findViewById(R.id.layoutTab3);
         tab4 = (LinearLayout) findViewById(R.id.layoutTab4);
+        tab5 = (LinearLayout) findViewById(R.id.layoutTab5);
 
 
         txtTab1 = (TextView)findViewById(R.id.txtHome);
@@ -912,17 +916,20 @@ public class MainActivity extends Activity implements
         txtTab2 = (TextView)findViewById(R.id.txtAlerts);
         txtTab3 = (TextView)findViewById(R.id.txtSocial);
         txtTab4 = (TextView)findViewById(R.id.txtMyBicsi);
+        txtTab5 = (TextView) findViewById(R.id.txtMySched);
 
         imgTab1 = (ImageView)findViewById(R.id.imgTab1);
         imgTab2 = (ImageView)findViewById(R.id.imgTab2);
         imgTab3 = (ImageView)findViewById(R.id.imgTab3);
         imgTab4 = (ImageView)findViewById(R.id.imgTab4);
         txtHomeUnreadCount = (TextView)findViewById(R.id.txtAlertsUnreadCount);
+        imgTab5 = (ImageView) findViewById(R.id.imgTab5);
 
         tab1.setOnClickListener(textView_listener);
         tab2.setOnClickListener(textView_listener);
         tab3.setOnClickListener(textView_listener);
         tab4.setOnClickListener(textView_listener);
+        tab5.setOnClickListener(textView_listener);
 
     }
 
@@ -985,6 +992,15 @@ public class MainActivity extends Activity implements
                 fragmentTransaction.commit();
             }
         }
+        if (tabList5.size() > 0) {
+            oldTab = tabList5.remove(tabList5.size() - 1);
+            if (oldTab != null) {
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.remove(oldTab);
+                fragmentTransaction.commit();
+            }
+        }
 
 
 
@@ -993,7 +1009,7 @@ public class MainActivity extends Activity implements
         tabList2.clear();
         tabList3.clear();
         tabList4.clear();
-        //tabList5.clear();
+        tabList5.clear();
 
         actionBar.setDisplayShowTitleEnabled(true);
 
@@ -1002,6 +1018,7 @@ public class MainActivity extends Activity implements
         tabList1.add(new HomeFragment());
         tabList2.add(new AlertsFragment());
         tabList3.add(new GalleryLoginFragment());
+        tabList5.add(new PlannerScheduleFragment());
 
 
         Bundle bundlem = new Bundle();
@@ -1091,6 +1108,13 @@ public class MainActivity extends Activity implements
                     finish();
                 }
                 break;
+            case 4:
+                if (tabList5.size() > 0) {
+                    oldFragment = tabList5.get(tabList5.size() - 1);
+                } else {
+                    finish();
+                }
+                break;
         }
         fragmentTransaction.remove(oldFragment);
         fragmentTransaction.commit();
@@ -1140,6 +1164,8 @@ public class MainActivity extends Activity implements
             return;
         if (tabList4.size() == 0)
             return;
+        if (tabList5.size() == 0)
+            return;
         if (tabIndex == mCurrentTabIndex)
             return;
 
@@ -1156,6 +1182,9 @@ public class MainActivity extends Activity implements
                 break;
             case 3:
                 newTab = this.tabList4.get(tabList4.size() - 1);
+                break;
+            case 4:
+                newTab = this.tabList5.get(tabList5.size() - 1);
                 break;
             default:
                 return;
@@ -1192,6 +1221,13 @@ public class MainActivity extends Activity implements
                     finish();
                 }
                 break;
+            case 4:
+                if (tabList5.size() > 0) {
+                    oldTab = tabList5.get(tabList5.size() - 1);
+                } else {
+                    finish();
+                }
+                break;
             default:
                 finish();
         }
@@ -1223,6 +1259,8 @@ public class MainActivity extends Activity implements
                 txtTab3.setTextColor(Color.WHITE);
                 imgTab4.setImageResource(R.drawable.icons_mybicsi);
                 txtTab4.setTextColor(Color.WHITE);
+                imgTab5.setImageResource(R.drawable.icons_social);
+                txtTab5.setTextColor(Color.WHITE);
 
                 break;
             case 1:
@@ -1234,6 +1272,8 @@ public class MainActivity extends Activity implements
                 txtTab3.setTextColor(Color.WHITE);
                 imgTab4.setImageResource(R.drawable.icons_mybicsi);
                 txtTab4.setTextColor(Color.WHITE);
+                imgTab5.setImageResource(R.drawable.icons_social);
+                txtTab5.setTextColor(Color.WHITE);
                 break;
             case 2:
                 imgTab1.setImageResource(R.drawable.icons_home);
@@ -1244,7 +1284,8 @@ public class MainActivity extends Activity implements
                 txtTab3.setTextColor(getResources().getColor(R.color.bicsi_yellow));
                 imgTab4.setImageResource(R.drawable.icons_mybicsi);
                 txtTab4.setTextColor(Color.WHITE);
-
+                imgTab5.setImageResource(R.drawable.icons_social);
+                txtTab5.setTextColor(Color.WHITE);
                 break;
             case 3:
                 imgTab1.setImageResource(R.drawable.icons_home);
@@ -1255,6 +1296,20 @@ public class MainActivity extends Activity implements
                 txtTab3.setTextColor(Color.WHITE);
                 imgTab4.setImageResource(R.drawable.icons_mybicsi_sel);
                 txtTab4.setTextColor(getResources().getColor(R.color.bicsi_yellow));
+                imgTab5.setImageResource(R.drawable.icons_social);
+                txtTab5.setTextColor(Color.WHITE);
+                break;
+            case 4:
+                imgTab1.setImageResource(R.drawable.icons_home);
+                txtTab1.setTextColor(Color.WHITE);
+                imgTab2.setImageResource(R.drawable.icons_alerts);
+                txtTab2.setTextColor(Color.WHITE);
+                imgTab3.setImageResource(R.drawable.icon_gallery);
+                txtTab3.setTextColor(Color.WHITE);
+                imgTab4.setImageResource(R.drawable.icons_mybicsi);
+                txtTab4.setTextColor(Color.WHITE);
+                imgTab5.setImageResource(R.drawable.icons_social_sel);
+                txtTab5.setTextColor(getResources().getColor(R.color.bicsi_yellow));
                 break;
             default:
                 break;
@@ -1305,14 +1360,16 @@ public class MainActivity extends Activity implements
     private OnClickListener textView_listener = new OnClickListener() {
         public void onClick(View v) {
             int id = v.getId();
-            if(id == R.id.layoutTab1){
+            if (id == R.id.layoutTab1) {
                 navigateToTabFragment(0);
-            }else if(id == R.id.layoutTab2){
+            } else if (id == R.id.layoutTab2) {
                 navigateToTabFragment(1);
-            }else if(id == R.id.layoutTab3){
+            } else if (id == R.id.layoutTab3) {
                 navigateToTabFragment(2);
-            }else if(id == R.id.layoutTab4)
+            } else if (id == R.id.layoutTab4) {
                 navigateToTabFragment(3);
+            } else if (id == R.id.layoutTab5)
+                navigateToTabFragment(4);
         }
 
     };
@@ -1447,6 +1504,14 @@ public class MainActivity extends Activity implements
                     tab = tabList4.get(tabList4.size() - 1);
                 }
                 break;
+            case 4:
+                if (tabList5.size() > 0) {
+                    oldTab = tabList5.remove(tabList5.size() - 1);
+                    tabList5.clear();
+                    tabList5.add(new PlannerScheduleFragment());
+                    tab = tabList5.get(tabList5.size() - 1);
+                }
+                break;
 
         }
 
@@ -1522,6 +1587,7 @@ public class MainActivity extends Activity implements
                     finish();
                 }
                 break;
+
         }
         fragmentTransaction.remove(oldFragment);
         fragmentTransaction.commit();

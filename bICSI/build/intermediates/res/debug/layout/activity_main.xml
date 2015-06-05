@@ -154,7 +154,41 @@
                 android:textSize="13sp" 
                 android:textColor="@color/white" />
         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/layoutTab5">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" >
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:id="@+id/imgTab5"
+                    android:src="@drawable/icons_social"
+                    android:paddingTop="1dp"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/myPlanner"
+                android:id="@+id/txtMySched"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
     </LinearLayout>
+
+
 
     <LinearLayout
         android:id="@+id/content"
