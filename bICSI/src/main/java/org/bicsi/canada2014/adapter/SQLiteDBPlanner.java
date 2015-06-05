@@ -178,7 +178,7 @@ public class SQLiteDBPlanner {
 
         Cursor mCursor = db.query(SQLITE_TABLE, new String[] {
                         KEY_ID,KEY_FUNCCD, KEY_FUNCTITLE, KEY_FUNCDESC, KEY_LOCATION, KEY_DATE, KEY_START, KEY_END},
-                null, null, null, null, null);
+                null, null, null, null, KEY_DATE+ " ASC," +KEY_START+ " ASC");
 
         if (mCursor != null) {
             mCursor.moveToFirst();
