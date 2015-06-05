@@ -81,6 +81,7 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 		sqlite_obj = new SQLiteDBPlanner(getActivity());
 
+
 		sqlite_obj.open();
 		
 		title = (TextView)v.findViewById(R.id.functiontitle);
@@ -274,6 +275,8 @@ public class ConfSchedSingleFragment extends Fragment  {
 			public void onClick(View view) {
 
 				if(plannerbutton.getText().equals("Add to Planner")) {
+
+					sqlite_obj.open();
 					String pfunctioncd = newFunctioncd.replace("'", "");
 					String ptitle = bundle.getString("functiontitle");
 					String pdesc = bundle.getString("functiondescription");
@@ -301,12 +304,14 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 					plannerbutton.setText("Remove from Planner");
 
-					list = sqlite_obj.getAllPlannerItems();
+					sqlite_obj.close();
 
-					print(list);
+					/*list = sqlite_obj.getAllPlannerItems();
+
+					print(list);*/
 				}
 				else{
-
+					sqlite_obj.open();
 					String pfunctioncd = newFunctioncd.replace("'", "");
 					sqlite_obj.DeletePlanner(pfunctioncd);
 
@@ -316,6 +321,8 @@ public class ConfSchedSingleFragment extends Fragment  {
 							Toast.LENGTH_SHORT).show();
 
 					plannerbutton.setText("Add to Planner");
+
+					sqlite_obj.close();
 
 				}
 			}
@@ -332,38 +339,20 @@ public class ConfSchedSingleFragment extends Fragment  {
 						browserIntent.addCategory(Intent.CATEGORY_BROWSABLE);
 						getActivity().startActivity(browserIntent);
 						
-						/*Intent internetIntent = new Intent(Intent.ACTION_VIEW,
-								Uri.parse("https://www.research.net/s/" + urlEndStr));
-								internetIntent.setComponent(new ComponentName("com.android.browser","com.android.browser.BrowserActivity"));
-								internetIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-								getActivity().startActivity(internetIntent);*/
-								
-				
-						
-						/*WebViewActivity myWebViewFragment = new WebViewActivity();
-						
-						Bundle bundle = new Bundle();
-						
-						bundle.putString("urlEndStr", urlEndStr);
-						
-						myWebViewFragment.setArguments(bundle);
 
-						mCallback.navigateToTabFragment(myWebViewFragment, null);*/
-
-						//openInternalWebview("https://www.research.net/s/" + urlEndStr);
-						//System.out.println("https://www.research.net/s/" + urlEndStr);
 					}
 				});
 				
 				//}
 
 
-				
+				sqlite_obj.close();
 				return v;
+
 	}
 
 
-	private void print(List<Planner> list) {
+	/*private void print(List<Planner> list) {
 		// TODO Auto-generated method stub
 		String value = "";
 		for(Planner pl : list){
@@ -374,6 +363,6 @@ public class ConfSchedSingleFragment extends Fragment  {
 		sqlite_obj.close();
 
 
-	}
+	}*/
 	
 }

@@ -100,7 +100,7 @@ public class NotesActivity extends Activity{
                             mContext.getApplicationContext(),
                             "Note saved!",
                             Toast.LENGTH_SHORT).show();
-
+                    sqlite_obj.close();
                     finish();
                 } else {
                     note.code = newFunccd;
@@ -112,13 +112,13 @@ public class NotesActivity extends Activity{
                             mContext.getApplicationContext(),
                             "Note updated!",
                             Toast.LENGTH_SHORT).show();
-
+                    sqlite_obj.close();
                     finish();
                 }
 
-                list = sqlite_obj.getAllNotes();
+                /*list = sqlite_obj.getAllNotes();
                 //System.out.println(print(list));
-                print(list);
+                print(list);*/
 
                 //back();
             }
@@ -159,7 +159,7 @@ public class NotesActivity extends Activity{
 
     }
 
-    private void print(List<SessionNotes> list) {
+    /*private void print(List<SessionNotes> list) {
         // TODO Auto-generated method stub
         String value = "";
         for(SessionNotes sn : list){
@@ -170,7 +170,7 @@ public class NotesActivity extends Activity{
         sqlite_obj.close();
 
 
-    }
+    }*/
 
     protected void hideKeyboard(View view)
     {
