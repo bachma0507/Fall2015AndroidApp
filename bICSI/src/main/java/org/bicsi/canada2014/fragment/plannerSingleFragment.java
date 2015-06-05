@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.bicsi.canada2014.activities.NotesActivity;
+import org.bicsi.canada2014.adapter.SQLiteDBPlanner;
 import org.bicsi.canada2014.common.MizeUtil;
 import org.bicsi.fall2015.R;
 
@@ -29,6 +31,8 @@ public class plannerSingleFragment extends Fragment {
 
     public String newFunctioncd;
 
+    private SQLiteDBPlanner sqlite_obj;
+
     TextView title;
     TextView date;
     TextView start;
@@ -38,6 +42,7 @@ public class plannerSingleFragment extends Fragment {
 
     Button surveybutton;
     Button notesbutton;
+    Button plannerbutton;
 
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -61,6 +66,11 @@ public class plannerSingleFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         final View v = inflater.inflate(R.layout.fragment_planner_single, container, false);
 
+        sqlite_obj = new SQLiteDBPlanner(getActivity());
+
+
+        sqlite_obj.open();
+
         title = (TextView)v.findViewById(R.id.functiontitle);
         date = (TextView)v.findViewById(R.id.functiondate);
         start = (TextView)v.findViewById(R.id.functionstarttimestr);
@@ -69,6 +79,7 @@ public class plannerSingleFragment extends Fragment {
         location = (TextView)v.findViewById(R.id.functionlocation);
         surveybutton = (Button)v.findViewById(R.id.survey_button);
         notesbutton = (Button)v.findViewById(R.id.notes_button);
+        plannerbutton = (Button)v.findViewById(R.id.planner_button);
 
         final Bundle bundle = getArguments();
 
@@ -149,6 +160,27 @@ public class plannerSingleFragment extends Fragment {
 
             }
         });
+
+        plannerbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                sqlite_obj.open();
+                String pfunctioncd = newFunctioncd.replace("'", "");
+                sqlite_obj.DeletePlanner(pfunctioncd);
+
+                Toast.makeText(
+                        getActivity().getApplicationContext(),
+                        "Deleted from planner!",
+                        Toast.LENGTH_SHORT).show();
+
+                sqlite_obj.close();
+                //finish();
+                getActivity().onBackPressed();
+
+            }
+
+
+    });
 
 
         return v;

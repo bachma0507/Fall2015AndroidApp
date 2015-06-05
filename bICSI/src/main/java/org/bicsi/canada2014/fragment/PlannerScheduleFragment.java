@@ -16,7 +16,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -24,6 +26,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.FilterQueryProvider;
+
+import android.view.MenuItem;
+
+import android.view.ContextMenu.ContextMenuInfo;
+import android.widget.TextView;
 
 
 public class PlannerScheduleFragment extends Fragment implements AdapterView.OnItemClickListener {
@@ -106,6 +113,8 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
             // Assign adapter to ListView
             listView.setAdapter(dataAdapter);
             listView.setOnItemClickListener(this);
+
+            //registerForContextMenu(listView);
 
             /*EditText myFilter = (EditText)v. findViewById(R.id.myFilter);
             myFilter.addTextChangedListener(new TextWatcher() {
@@ -226,5 +235,25 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
         }
 
     }
+
+    // We want to create a context Menu when the user long click on an item
+    /*@Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+
+        super.onCreateContextMenu(menu, v, menuInfo);
+        AdapterView.AdapterContextMenuInfo aInfo = (AdapterView.AdapterContextMenuInfo) menuInfo;
+
+        // We know that each row in the adapter is a Map
+        //HashMap map =  (HashMap)
+                dataAdapter.getItem(aInfo.position);
+
+        menu.setHeaderTitle("Options for ");
+        menu.add(1, 1, 1, "Details");
+        menu.add(1, 2, 2, "Delete");
+
+    }*/
+
+
 
 }
