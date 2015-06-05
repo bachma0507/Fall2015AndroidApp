@@ -142,7 +142,7 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
     @Override
     public void onItemClick(AdapterView<?> listView, View view,
                             int position, long id) {
-        /*try {
+        try {
             sqlite_obj.open();
 
             //Toast.makeText(getActivity(), "Clicked "+ position, Toast.LENGTH_LONG).show();
@@ -150,89 +150,43 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
             Cursor cursor = (Cursor) listView.getItemAtPosition(position);
 
             String functioncd =
-                    cursor.getString(cursor.getColumnIndexOrThrow("_id"));
+                    cursor.getString(cursor.getColumnIndexOrThrow("code"));
 
             String functionTitle =
-                    cursor.getString(cursor.getColumnIndexOrThrow("functiontitle"));
+                    cursor.getString(cursor.getColumnIndexOrThrow("title"));
 
             String functionDate =
-                    cursor.getString(cursor.getColumnIndexOrThrow("fucntioindate"));
+                    cursor.getString(cursor.getColumnIndexOrThrow("date"));
 
             String functionStart =
-                    cursor.getString(cursor.getColumnIndexOrThrow("functionStartTimeStr"));
+                    cursor.getString(cursor.getColumnIndexOrThrow("start"));
 
             String functionEnd =
-                    cursor.getString(cursor.getColumnIndexOrThrow("functionEndTimeStr"));
+                    cursor.getString(cursor.getColumnIndexOrThrow("end"));
 
             String functionDescription =
-                    cursor.getString(cursor.getColumnIndexOrThrow("functiondescription"));
+                    cursor.getString(cursor.getColumnIndexOrThrow("desc"));
 
             String functionLocation =
-                    cursor.getString(cursor.getColumnIndexOrThrow("LOCATIONNAME"));
-
-            String trainer1firstname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer1firstname"));
-
-            String trainer1lastname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer1lastname"));
-
-            String trainer2firstname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer2firstname"));
-
-            String trainer2lastname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer2lastname"));
-
-            String trainer3firstname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer3firstname"));
-
-            String trainer3lastname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer3lastname"));
-
-            String trainer4firstname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer4firstname"));
-
-            String trainer4lastname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer4lastname"));
-
-            String trainer5firstname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer5firstname"));
-
-            String trainer5lastname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer5lastname"));
-
-            String trainer6firstname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer6firstname"));
-
-            String trainer6lastname =
-                    cursor.getString(cursor.getColumnIndexOrThrow("trainer6lastname"));
+                    cursor.getString(cursor.getColumnIndexOrThrow("location"));
 
 
 
-            ConfSchedSingleFragment mySingleFragment = new ConfSchedSingleFragment();
+
+
+            plannerSingleFragment mySingleFragment = new plannerSingleFragment();
 
             Bundle bundle = new Bundle();
 
             String newFunctioncd = new String("'" + functioncd + "'");
 
-            bundle.putString("_id", newFunctioncd);
-            bundle.putString("functiontitle", functionTitle);
-            bundle.putString("fucntioindate", functionDate);
-            bundle.putString("functionStartTimeStr", functionStart);
-            bundle.putString("functionEndTimeStr", functionEnd);
-            bundle.putString("functiondescription", functionDescription);
-            bundle.putString("LOCATIONNAME", functionLocation);
-            bundle.putString("trainer1firstname", trainer1firstname);
-            bundle.putString("trainer1lastname", trainer1lastname);
-            bundle.putString("trainer2firstname", trainer2firstname);
-            bundle.putString("trainer2lastname", trainer2lastname);
-            bundle.putString("trainer3firstname", trainer3firstname);
-            bundle.putString("trainer3lastname", trainer3lastname);
-            bundle.putString("trainer4firstname", trainer4firstname);
-            bundle.putString("trainer4lastname", trainer4lastname);
-            bundle.putString("trainer5firstname", trainer5firstname);
-            bundle.putString("trainer5lastname", trainer5lastname);
-            bundle.putString("trainer6firstname", trainer6firstname);
-            bundle.putString("trainer6lastname", trainer6lastname);
+            bundle.putString("code", newFunctioncd);
+            bundle.putString("title", functionTitle);
+            bundle.putString("date", functionDate);
+            bundle.putString("start", functionStart);
+            bundle.putString("end", functionEnd);
+            bundle.putString("desc", functionDescription);
+            bundle.putString("location", functionLocation);
 
 
 
@@ -245,7 +199,7 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
         } finally{
 
             sqlite_obj.close();
-        }*/
+        }
 
     }
 
@@ -263,7 +217,7 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
             View view = super.getView(position, convertView, parent);
             //check for odd or even to set alternate colors to the row background
             if(position % 2 == 0){
-                view.setBackgroundColor(Color.rgb(246, 235, 253));
+                view.setBackgroundColor(Color.rgb(252, 240, 217));
             }
             else {
                 view.setBackgroundColor(Color.rgb(255, 255, 255));
