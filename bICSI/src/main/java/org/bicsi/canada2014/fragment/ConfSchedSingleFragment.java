@@ -105,13 +105,36 @@ public class ConfSchedSingleFragment extends Fragment  {
 		surveybutton = (Button)v.findViewById(R.id.survey_button);
 		notesbutton = (Button)v.findViewById(R.id.notes_button);
 		plannerbutton = (Button)v.findViewById(R.id.planner_button);
+
+
 		
 		
 		final Bundle bundle = getArguments();
+
+
+
 				if(bundle != null){
 				
 				newFunctioncd = bundle.getString("_id");
 					String funccd = newFunctioncd;
+
+
+					String pfunctioncd = funccd.replace("'", "");
+
+					System.out.println("newFunctioncd value is " + pfunctioncd);
+
+					Cursor c = sqlite_obj.fetchPlannerByCode(pfunctioncd);
+
+					if (c.moveToFirst() == false){
+
+						plannerbutton.setText("Add to Planner");
+
+					}
+					else{
+
+						plannerbutton.setText("Remove from Planner");
+
+					}
 				
 				if(newFunctioncd.contains("CONCSES") || newFunctioncd.contains("PRECON") || newFunctioncd.contains("GS_TUES") || newFunctioncd.contains("GS_THURS") == true){
 					speakerslabel.setVisibility(View.VISIBLE);
@@ -227,6 +250,7 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 
 
+
 					}
 				//});
 
@@ -248,34 +272,52 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 		plannerbutton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				String pfunctioncd = newFunctioncd.replace("'", "");
-				String ptitle = bundle.getString("functiontitle");
-				String pdesc = bundle.getString("functiondescription");
-				String plocation = bundle.getString("LOCATIONNAME");
-				String pdate = bundle.getString("fucntioindate");
-				String pstart = bundle.getString("functionStartTimeStr");
-				String pend = bundle.getString("functionEndTimeStr");
 
-				Planner plannerItem = new Planner();
+				if(plannerbutton.getText().equals("Add to Planner")) {
+					String pfunctioncd = newFunctioncd.replace("'", "");
+					String ptitle = bundle.getString("functiontitle");
+					String pdesc = bundle.getString("functiondescription");
+					String plocation = bundle.getString("LOCATIONNAME");
+					String pdate = bundle.getString("fucntioindate");
+					String pstart = bundle.getString("functionStartTimeStr");
+					String pend = bundle.getString("functionEndTimeStr");
 
-				plannerItem.code = pfunctioncd;
-				plannerItem.title = ptitle;
-				plannerItem.desc = pdesc;
-				plannerItem.location = plocation;
-				plannerItem.date = pdate;
-				plannerItem.start = pstart;
-				plannerItem.end = pend;
+					Planner plannerItem = new Planner();
 
-				sqlite_obj.insertPlanner(plannerItem);
+					plannerItem.code = pfunctioncd;
+					plannerItem.title = ptitle;
+					plannerItem.desc = pdesc;
+					plannerItem.location = plocation;
+					plannerItem.date = pdate;
+					plannerItem.start = pstart;
+					plannerItem.end = pend;
 
-				Toast.makeText(
-						getActivity().getApplicationContext(),
-						"Added to planner!",
-						Toast.LENGTH_SHORT).show();
+					sqlite_obj.insertPlanner(plannerItem);
 
-				list = sqlite_obj.getAllPlannerItems();
+					Toast.makeText(
+							getActivity().getApplicationContext(),
+							"Added to planner!",
+							Toast.LENGTH_SHORT).show();
 
-				print(list);
+					plannerbutton.setText("Remove from Planner");
+
+					list = sqlite_obj.getAllPlannerItems();
+
+					print(list);
+				}
+				else{
+
+					String pfunctioncd = newFunctioncd.replace("'", "");
+					sqlite_obj.DeletePlanner(pfunctioncd);
+
+					Toast.makeText(
+							getActivity().getApplicationContext(),
+							"Deleted from planner!",
+							Toast.LENGTH_SHORT).show();
+
+					plannerbutton.setText("Add to Planner");
+
+				}
 			}
 
 		});

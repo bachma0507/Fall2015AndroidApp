@@ -116,7 +116,7 @@ public class SQLiteDBPlanner {
     // Delete Database function
     public void DeletePlanner(String code) {
         //open();
-        db.delete(SQLITE_TABLE, KEY_FUNCCD + "=" + code, null);
+        db.delete(SQLITE_TABLE, KEY_FUNCCD + "= '" + code + "'", null);
         //close();
     }
 
@@ -217,5 +217,27 @@ public class SQLiteDBPlanner {
     }
 
 
+    public Cursor getItem(String code) {
+
+        String selectQuery = "SELECT  * FROM " + SQLITE_TABLE + " WHERE "
+                + KEY_FUNCCD + " = '" + code + "'";
+        Log.d(TAG, selectQuery);
+
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        if (c != null)
+            c.moveToFirst();
+
+        Planner plannerItem = new Planner();
+        plannerItem.code = c.getString(c.getColumnIndex(KEY_FUNCCD));
+        plannerItem.title = c.getString(c.getColumnIndex(KEY_FUNCTITLE));
+        plannerItem.desc = c.getString(c.getColumnIndex(KEY_FUNCDESC));
+        plannerItem.location = c.getString(c.getColumnIndex(KEY_LOCATION));
+        plannerItem.date = c.getString(c.getColumnIndex(KEY_DATE));
+        plannerItem.start = c.getString(c.getColumnIndex(KEY_START));
+        plannerItem.end = c.getString(c.getColumnIndex(KEY_END));
+
+        return c;
+    }
 
 }
