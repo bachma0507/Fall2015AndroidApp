@@ -14,7 +14,7 @@
     <string name="alerts">Alerts</string>
     <string name="social">Photo Gallery</string>
     <string name="myBICSI">My BICSI</string>
-    <string name="myPlanner">My Planner</string>
+    <string name="myPlanner">My Schedule</string>
 	<string name="aboutUs">About Us</string>
 	<string name="version">Version</string>
 	<string name="conference">Conference</string>
@@ -33,12 +33,16 @@
 	<string name="contactus">Contact Us</string>
 	<string name="welcome">BICSI Welcome</string>
 	<string name="comments">Email Your Comments</string>
+    <string name="ImportDialog">Enter your Member ID to import your schedule.</string>
+    <string name="memberId">Member ID</string>
 	<string name="extraicon"></string>
 	
 	<string name="Username">Username</string>
     <string name="Password">Password</string>
     <string name="Email">Email</string>
     <string name="LoginBtn">Login</string>
+    <string name="ImportBtn">Import Schedule</string>
+    <string name="CancelBtn">Cancel</string>
     <string name="SignupBtn">Sign Up</string>
     <string name="LogoutBtn">Log Out</string>
     <string name="Welcome">Welcome!</string>

@@ -170,7 +170,7 @@ public class plannerSingleFragment extends Fragment {
 
                 Toast.makeText(
                         getActivity().getApplicationContext(),
-                        "Deleted from planner!",
+                        "Deleted from My Schedule!",
                         Toast.LENGTH_SHORT).show();
 
                 sqlite_obj.close();

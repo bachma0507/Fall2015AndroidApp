@@ -152,9 +152,9 @@ public class NotesActivity extends Activity{
 //show text in the Intent object in the TextView
         title.setText(getIntent().getStringExtra("functiontitle"));
 
-        getWindow().setSoftInputMode(
+        /*getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
-        );
+        );*/
 
 
     }

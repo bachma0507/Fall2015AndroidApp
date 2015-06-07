@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="?android:attr/buttonStyleSmall"
-            android:text="Add to Planner"
+            android:text="Add to Schedule"
             android:id="@+id/planner_button" />
     </LinearLayout>
 

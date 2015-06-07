@@ -34,6 +34,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -604,6 +605,7 @@ public class MainActivity extends Activity implements
         //call webservice
         private ProgressDialog pDialog;
         private static final String url = "https://webservice.bicsi.org/json/reply/MobSession?SessionAltCd=CN-FALL-NV-0915";
+        //private final Uri uri = Uri.parse("https://webservice.bicsi.org/json/reply/MobSession?SessionAltCd=CN-FALL-NV-0915");
         private String myLongStr;
         private String myLongStrEnd;
 
@@ -637,6 +639,7 @@ public class MainActivity extends Activity implements
 
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
+            //String jsonStr = sh.makeServiceCall(uri, ServiceHandler.GET);
 
             Log.d("Response: ", "> " + jsonStr);
 

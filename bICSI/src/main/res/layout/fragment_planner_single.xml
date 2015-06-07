@@ -18,7 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="?android:attr/buttonStyleSmall"
-                android:text="Delete from Planner"
+                android:text="Delete from Schedule"
                 android:id="@+id/planner_button" />
         </LinearLayout>
 

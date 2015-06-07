@@ -96,7 +96,10 @@
     <drawable name="com_facebook_picker_default_separator_color">#33464c59</drawable>
     <!-- From: file:/Users/barry/Documents/Fall2015AndroidApp/BICSI/bICSI/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="CancelBtn">Cancel</string>
     <string name="Email">Email</string>
+    <string name="ImportBtn">Import Schedule</string>
+    <string name="ImportDialog">Enter your Member ID to import your schedule.</string>
     <string name="LoginBtn">Login</string>
     <string name="Logo">Logo</string>
     <string name="LogoutBtn">Log Out</string>
@@ -175,8 +178,9 @@
     <string name="hotelinformation">Hotel Information</string>
     <string name="logintext">If you have a user account for the Photo Gallery, please sign in below. If not, please sign up.</string>
     <string name="meetings">Meetings</string>
+    <string name="memberId">Member ID</string>
     <string name="myBICSI">My BICSI</string>
-    <string name="myPlanner">My Planner</string>
+    <string name="myPlanner">My Schedule</string>
     <string name="noFacebookApp">Please install the Facebook app on your device.</string>
     <string name="no_friends_selected">&lt;No friends selected></string>
     <string name="no_place_selected">&lt;No place selected></string>

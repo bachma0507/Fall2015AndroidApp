@@ -128,12 +128,12 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 					if (c.moveToFirst() == false){
 
-						plannerbutton.setText("Add to Planner");
+						plannerbutton.setText("Add to My Schedule");
 
 					}
 					else{
 
-						plannerbutton.setText("Remove from Planner");
+						plannerbutton.setText("Remove from My Schedule");
 
 					}
 				
@@ -274,7 +274,7 @@ public class ConfSchedSingleFragment extends Fragment  {
 		plannerbutton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 
-				if(plannerbutton.getText().equals("Add to Planner")) {
+				if(plannerbutton.getText().equals("Add to My Schedule")) {
 
 					sqlite_obj.open();
 					String pfunctioncd = newFunctioncd.replace("'", "");
@@ -299,10 +299,10 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 					Toast.makeText(
 							getActivity().getApplicationContext(),
-							"Added to planner!",
+							"Added to My Schedule!",
 							Toast.LENGTH_SHORT).show();
 
-					plannerbutton.setText("Remove from Planner");
+					plannerbutton.setText("Remove from My Schedule");
 
 					sqlite_obj.close();
 
@@ -317,10 +317,10 @@ public class ConfSchedSingleFragment extends Fragment  {
 
 					Toast.makeText(
 							getActivity().getApplicationContext(),
-							"Deleted from planner!",
+							"Deleted from My Schedule!",
 							Toast.LENGTH_SHORT).show();
 
-					plannerbutton.setText("Add to Planner");
+					plannerbutton.setText("Add to My Schedule");
 
 					sqlite_obj.close();
 

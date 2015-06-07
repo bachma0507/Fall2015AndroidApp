@@ -355,5 +355,19 @@ public class SQLiteDBAllData {
 		return mCursor;
 
 	}
+
+	public Cursor getSchedulesByFuncCode(String functioncd){
+
+		Cursor mCursor = db.query(SQLITE_TABLE, new String[] {
+						KEY_ID, KEY_functiontitle, KEY_fucntioindate, KEY_functionStartTime, KEY_functionStartTimeStr, KEY_functionEndTime, KEY_functionEndTimeStr, KEY_functiondescription, KEY_LOCATIONNAME },
+				KEY_ID + " = '" + functioncd + "'", null, null, null, null, null);
+
+
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+
+	}
 }
 

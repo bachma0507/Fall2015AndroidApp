@@ -4,11 +4,13 @@ package org.bicsi.canada2014.fragment;
  * Created by barry on 6/3/15.
  */
 
+import org.bicsi.canada2014.activities.MainActivity;
 import org.bicsi.canada2014.adapter.SQLiteDBPlanner;
 import org.bicsi.fall2015.R;
 import org.bicsi.canada2014.adapter.SQLiteDBAllData;
 import org.bicsi.canada2014.common.MizeUtil.NavigateToTabFragmentListener;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.database.Cursor;
@@ -26,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.FilterQueryProvider;
+import android.content.DialogInterface;
 
 import android.view.MenuItem;
 
@@ -74,47 +77,87 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
 
             //Cursor cursor = sqlite_obj.getAllSChedulesByPlanner();
             Cursor cursor = sqlite_obj.fetchAllPlannerItems();
-            //cursor.getCount();
-            System.out.println("Table row count is: " + cursor.getCount());
-
-            String[] columns = new String[] {
-                    SQLiteDBPlanner.KEY_FUNCCD,
-                    SQLiteDBPlanner.KEY_FUNCTITLE,
-                    SQLiteDBPlanner.KEY_FUNCDESC,
-                    SQLiteDBPlanner.KEY_LOCATION,
-                    SQLiteDBPlanner.KEY_DATE,
-                    SQLiteDBPlanner.KEY_START,
-                    SQLiteDBPlanner.KEY_END
 
 
+            if (cursor.getCount() == 0){
 
-            };
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                        getActivity());
 
-            int[] to = new int[] {
-                    R.id.textViewFUNCTIONCD,
-                    R.id.textViewfunctiontitle,
-                    R.id.textViewfunctiondescription,
-                    R.id.textViewlocationname,
-                    R.id.textViewfunctiondate,
-                    R.id.textViewfunctionStartTimeStr,
-                    R.id.textViewfunctionEndTimeStr
+                // set title
+                alertDialogBuilder.setTitle("Notification");
 
-            };
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("You have not added any items to your schedule. Please tap Add to My Schedule when viewing Schedule or Session details. If you signed up for sessions or other items when you registered, please tap the Import button below to import your sessions.")
+                        .setCancelable(false)
+                        .setPositiveButton("Import",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
 
-            dataAdapter = new MyCursorAdapter(
+                                ImportScheduleFragment myFragment = new ImportScheduleFragment();
 
-                    getActivity(), R.layout.planner_schedule_info_list,
-                    cursor,
-                    columns,
-                    to,
-                    0);
+                                mCallback.navigateToTabFragment(myFragment, null); //interface method
+                                // if this button is clicked, close
+                                // current activity
+                                //getActivity().finish();
+                            }
+                        })
+                        .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // if this button is clicked, just close
+                                // the dialog box and do nothing
+                                dialog.cancel();
+                            }
+                        });
 
-            ListView listView = (ListView)v. findViewById(android.R.id.list);
-            // Assign adapter to ListView
-            listView.setAdapter(dataAdapter);
-            listView.setOnItemClickListener(this);
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
 
-            //registerForContextMenu(listView);
+                // show it
+                alertDialog.show();
+            }
+
+            //}
+            else {
+                System.out.println("Table row count is: " + cursor.getCount());
+
+                String[] columns = new String[]{
+                        SQLiteDBPlanner.KEY_FUNCCD,
+                        SQLiteDBPlanner.KEY_FUNCTITLE,
+                        SQLiteDBPlanner.KEY_FUNCDESC,
+                        SQLiteDBPlanner.KEY_LOCATION,
+                        SQLiteDBPlanner.KEY_DATE,
+                        SQLiteDBPlanner.KEY_START,
+                        SQLiteDBPlanner.KEY_END
+
+
+                };
+
+                int[] to = new int[]{
+                        R.id.textViewFUNCTIONCD,
+                        R.id.textViewfunctiontitle,
+                        R.id.textViewfunctiondescription,
+                        R.id.textViewlocationname,
+                        R.id.textViewfunctiondate,
+                        R.id.textViewfunctionStartTimeStr,
+                        R.id.textViewfunctionEndTimeStr
+
+                };
+
+                dataAdapter = new MyCursorAdapter(
+
+                        getActivity(), R.layout.planner_schedule_info_list,
+                        cursor,
+                        columns,
+                        to,
+                        0);
+
+                ListView listView = (ListView) v.findViewById(android.R.id.list);
+                // Assign adapter to ListView
+                listView.setAdapter(dataAdapter);
+                listView.setOnItemClickListener(this);
+
+                //registerForContextMenu(listView);
 
             /*EditText myFilter = (EditText)v. findViewById(R.id.myFilter);
             myFilter.addTextChangedListener(new TextWatcher() {
@@ -139,7 +182,7 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
                 }
             });*/
 
-
+            }
             return v;
 
         } finally {
@@ -210,6 +253,7 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
             sqlite_obj.close();
         }
 
+
     }
 
     private class MyCursorAdapter extends SimpleCursorAdapter{
@@ -233,6 +277,7 @@ public class PlannerScheduleFragment extends Fragment implements AdapterView.OnI
             }
             return view;
         }
+
 
     }
 
