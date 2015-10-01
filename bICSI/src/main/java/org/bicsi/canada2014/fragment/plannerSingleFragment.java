@@ -16,7 +16,7 @@ import android.widget.Toast;
 import org.bicsi.canada2014.activities.NotesActivity;
 import org.bicsi.canada2014.adapter.SQLiteDBPlanner;
 import org.bicsi.canada2014.common.MizeUtil;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import java.net.URI;
 

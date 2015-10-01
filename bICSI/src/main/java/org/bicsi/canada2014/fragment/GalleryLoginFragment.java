@@ -10,7 +10,7 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.content.Context;
 
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;

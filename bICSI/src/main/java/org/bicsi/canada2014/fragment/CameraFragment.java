@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import org.bicsi.canada2014.activities.NewMealActivity;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import android.app.Fragment;
 import android.app.FragmentManager;

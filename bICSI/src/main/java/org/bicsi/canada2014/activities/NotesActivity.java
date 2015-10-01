@@ -18,7 +18,7 @@ import android.widget.Toast;
 import org.bicsi.canada2014.Meal;
 import org.bicsi.canada2014.SessionNotes;
 import org.bicsi.canada2014.adapter.SQLiteDBSessNotes;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import java.util.ArrayList;
 import java.util.List;

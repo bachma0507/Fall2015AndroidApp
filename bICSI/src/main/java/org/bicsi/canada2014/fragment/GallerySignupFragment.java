@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.content.Context;
 import android.content.Intent;
 
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;

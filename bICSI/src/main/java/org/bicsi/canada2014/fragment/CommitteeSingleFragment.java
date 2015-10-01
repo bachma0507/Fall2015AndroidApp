@@ -1,7 +1,7 @@
 package org.bicsi.canada2014.fragment;
 
 import org.bicsi.canada2014.activities.MainActivity;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import android.app.Fragment;
 import android.os.Bundle;

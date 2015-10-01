@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import android.app.AlertDialog;
 import android.content.Intent;

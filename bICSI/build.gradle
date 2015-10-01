@@ -4,7 +4,7 @@ android {
     compileSdkVersion 19
     buildToolsVersion "21.1.2"
     defaultConfig {
-        applicationId 'org.bicsi.fall2015'
+        applicationId 'org.bicsi.winter2016'
         minSdkVersion 14
         targetSdkVersion 17
     }

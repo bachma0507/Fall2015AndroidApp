@@ -6,7 +6,7 @@ import org.bicsi.canada2014.activities.NotesActivity;
 import org.bicsi.canada2014.adapter.SQLiteDBAllData;
 import org.bicsi.canada2014.adapter.SQLiteDBPlanner;
 import org.bicsi.canada2014.common.MizeUtil.NavigateToTabFragmentListener;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;

@@ -3,7 +3,7 @@ package org.bicsi.canada2014.fragment;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 import org.bicsi.canada2014.adapter.SQLiteDBcShed;
 import org.bicsi.canada2014.common.MizeUtil.NavigateToTabFragmentListener;
 import android.annotation.SuppressLint;

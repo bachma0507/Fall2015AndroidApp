@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.content.Intent;
 
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 import org.bicsi.canada2014.activities.MainActivity;
 import org.bicsi.canada2014.common.MizeUtil.NavigateToTabFragmentListener;
 

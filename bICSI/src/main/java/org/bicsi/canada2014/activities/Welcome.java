@@ -1,6 +1,6 @@
 package org.bicsi.canada2014.activities;
 
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import com.parse.ParseUser;
 

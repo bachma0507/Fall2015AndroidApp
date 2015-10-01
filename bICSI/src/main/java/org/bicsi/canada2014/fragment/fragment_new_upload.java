@@ -13,7 +13,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import android.app.Activity;
 import android.app.Fragment;

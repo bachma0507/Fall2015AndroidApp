@@ -22,7 +22,7 @@ import org.bicsi.canada2014.adapter.SQLiteDBAllData;
 import org.bicsi.canada2014.adapter.SQLiteDBPlanner;
 import org.bicsi.canada2014.common.MizeUtil;
 import org.bicsi.canada2014.common.ServiceHandler;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

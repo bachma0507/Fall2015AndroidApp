@@ -1,6 +1,6 @@
 package org.bicsi.canada2014.activities;
 import org.bicsi.canada2014.common.MizeUtil.NavigateToTabFragmentListener;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import android.app.Activity;
 import android.app.Fragment;

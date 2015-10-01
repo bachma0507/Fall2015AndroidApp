@@ -1,7 +1,7 @@
 <resources>
 
-    <string name="app_name">BICSI Fall 2015 Conference</string>
-    <string name="app_title">2015 BICSI Fall Conference</string>
+    <string name="app_name">BICSI Winter 2016 Conference</string>
+    <string name="app_title">2016 BICSI <Winter></Winter> Conference</string>
 
     <string name="app_id">1420178141528021</string>
      <string name="action_settings">Settings</string>

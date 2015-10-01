@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 import org.bicsi.canada2014.models.Alert;
 
 import android.app.Activity;

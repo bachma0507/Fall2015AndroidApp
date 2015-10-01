@@ -19,7 +19,7 @@ import java.util.Locale;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.bicsi.canada2014.fragment.PlannerScheduleFragment;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
@@ -193,7 +193,7 @@ public class MainActivity extends Activity implements
         ParseInstallation.getCurrentInstallation().saveInBackground();
         ParseAnalytics.trackAppOpened(getIntent());
 
-        Crittercism.initialize(getApplicationContext(), "5543d5958172e25e67906b49");
+        Crittercism.initialize(getApplicationContext(), "560d40468d4d8c0a00d07bc9");
 
         setupTabs();
         resetTabs();

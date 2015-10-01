@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 import org.bicsi.canada2014.activities.MainActivity;
 import org.bicsi.canada2014.adapter.AlertAdapter;
 import org.bicsi.canada2014.adapter.AlertsAdapter;

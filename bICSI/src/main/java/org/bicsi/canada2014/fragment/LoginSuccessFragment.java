@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
 
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 import org.bicsi.canada2014.activities.NewMealActivity;
 
 import android.widget.Button;

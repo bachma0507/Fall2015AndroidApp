@@ -2,7 +2,7 @@ package org.bicsi.canada2014.activities;
 
 import org.bicsi.canada2014.Meal;
 import org.bicsi.canada2014.fragment.fragment_new_upload;
-import org.bicsi.fall2015.R;
+import org.bicsi.winter2016.R;
 
 import android.app.Activity;
 import android.app.Fragment;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.bicsi.fall2015"
+    package="org.bicsi.winter2016"
     android:versionCode="1"
     android:versionName="1" >
 
@@ -27,7 +27,7 @@
     <uses-permission android:name="org.bisci.canada2015.permission.C2D_MESSAGE" />
 
     <permission
-        android:name="org.bicsi.fall2015.permission.C2D_MESSAGE"
+        android:name="org.bicsi.winter2016.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
     <application
@@ -197,7 +197,7 @@
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
                 <!-- IMPORTANT: Change "com.parse.tutorials.pushnotifications" to match your app's package name. -->
-                <category android:name="org.bicsi.fall2015" />
+                <category android:name="org.bicsi.winter2016" />
             </intent-filter>
         </receiver>
     </application>
